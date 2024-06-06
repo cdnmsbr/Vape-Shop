@@ -1,0 +1,7 @@
+{
+  "name": "e - shp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
