@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonIcon, IonCardContent, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonInput, IonItem, IonLabel, IonButton, IonImg } from '@ionic/angular/standalone';
 
 @Component({
@@ -12,8 +13,13 @@ import { IonContent, IonHeader, IonTitle, IonToolbar, IonIcon, IonCardContent, I
 })
 export class LoginPage implements OnInit {
 
-  constructor() { }
-
+  constructor(private router: Router) {}
+  login() {
+    this.router.navigate(['/home']);
+  }
+  navigateToRegister() {
+    this.router.navigate(['/register']);
+  }
   ngOnInit() {
     console.log("Hello")
   }

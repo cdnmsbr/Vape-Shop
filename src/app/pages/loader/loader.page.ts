@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonSpinner } from '@ionic/angular/standalone';
 
 @Component({
@@ -12,10 +13,24 @@ import { IonContent, IonHeader, IonTitle, IonToolbar, IonSpinner } from '@ionic/
 })
 export class LoaderPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
-    console.log("Hello")
+    setTimeout(() => {
+      this.navigateBasedOnAuthentication();
+    }, 2000);
   }
+  navigateBasedOnAuthentication() {
+    const isAuthenticated = this.checkAuthentication();
 
+    if (isAuthenticated) {
+      this.router.navigate(['/home']);
+    } else {
+      this.router.navigate(['/login']);
+    }
+  }
+  checkAuthentication(): boolean {
+    const token = localStorage.getItem('auth-token');
+    return !!token;
+  }
 }
