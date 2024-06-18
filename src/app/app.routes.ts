@@ -42,4 +42,20 @@ export const routes: Routes = [
     path: 'viewcart',
     loadComponent: () => import('./pages/viewcart/viewcart.page').then( m => m.ViewcartPage)
   },
+  {
+    path: 'submit',
+    loadComponent: () => import('./pages/submit/submit.page').then( m => m.SubmitPage)
+  },
+  {
+    path: 'buynow',
+    loadComponent: () => import('./pages/buynow/buynow.page').then( m => m.BuynowPage)
+  },
+  {
+    path: 'orders',
+    loadComponent: () => import('./pages/orders/orders.page').then( m => m.OrdersPage)
+  },
+  {
+    path: 'trackorder',
+    loadComponent: () => import('./pages/trackorder/trackorder.page').then( m => m.TrackOrderPage)
+  },
 ];

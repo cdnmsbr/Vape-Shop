@@ -1,0 +1,23 @@
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-toolbar>
+      <ion-title size="large">Orders</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-card *ngFor="let order of orders">
+      <ion-card-header>
+        <ion-card-title>{{ order.title }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-img [src]="order.image"></ion-img>
+        <p>₱{{ order.price }}</p>
+        <p>Order Date: {{ order.date }}</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

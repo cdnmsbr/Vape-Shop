@@ -1,19 +1,16 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>View Cart</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-content>
+  <ion-header>
     <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
       <ion-title size="large">View Cart</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-list *ngIf="cartItems.length > 0; else emptyCart">
     <ion-item *ngFor="let item of cartItems">
-      <ion-card>
+      <ion-card class="product-card">
         <ion-img [src]="item.image"></ion-img>
         <ion-card-header>
           <ion-card-title>{{ item.title }}</ion-card-title>
@@ -31,20 +28,19 @@
       </ion-card>
     </ion-item>
   </ion-list>
+  <ion-toolbar>
+    <ion-title>Total: ₱{{ getTotalPrice() }}</ion-title>
+    <ion-button size="full" expand="block" color="primary" (click)="proceedToCheckout()">Proceed to Checkout</ion-button>
+  </ion-toolbar>
 
   <ng-template #emptyCart>
     <ion-item>
-      <ion-buttons slot="start">
-        <ion-back-button defaultHref="/"></ion-back-button>
-      </ion-buttons>
       <ion-label>Your cart is empty.</ion-label>
     </ion-item>
   </ng-template>
-
-  <ion-footer *ngIf="cartItems.length > 0">
-    <ion-toolbar>
-      <ion-title>Total: ₱{{ getTotalPrice() }}</ion-title>
-      <ion-button expand="block" color="primary" (click)="proceedToCheckout()">Proceed to Checkout</ion-button>
-    </ion-toolbar>
-  </ion-footer>
 </ion-content>
+
+<ion-footer *ngIf="cartItems.length > 0">
+  
+</ion-footer>
+
