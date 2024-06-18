@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cart</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item>
+      <ion-card>
+        <ion-img src="https://vapes.ph/wp-content/uploads/2024/01/10ml-430x430.jpg"></ion-img>
+        <ion-card-header>
+          <ion-card-title>Demon X Mirus Xyber 12500 Disposable Vape Kit</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>₱600</p>
+          <ion-item>
+            <ion-label>Quantity</ion-label>
+            <ion-select [(ngModel)]="selectedQuantity">
+              <ion-select-option *ngFor="let qty of quantities" [value]="qty">{{ qty }}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" color="primary" (click)="add()">Add to Cart</ion-button>
+</ion-content>

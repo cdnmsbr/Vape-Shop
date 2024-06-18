@@ -15,12 +15,12 @@ export class HomePage implements OnInit {
 
   constructor(private router: Router) { }
   logout() {
-    // Implement your logout logic here
-    // For example, clear authentication tokens from local storage
     localStorage.removeItem('auth-token');
     
-    // Redirect to the login page
     this.router.navigate(['/login']);
+  }
+  goToCart() {
+    this.router.navigate(['/cart']);
   }
 
   ngOnInit() {

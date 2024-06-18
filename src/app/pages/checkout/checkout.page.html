@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Checkout</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Checkout</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Payment Method</ion-label>
+        <ion-select placeholder="Select payment method">
+          <ion-select-option value="card">Credit/Debit Card</ion-select-option>
+          <ion-select-option value="gcash">GCash</ion-select-option>
+          <ion-select-option value="cod">Cash on Delivery</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Order Summary</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-card>
+            <ion-img src="https://vapes.ph/wp-content/uploads/2024/01/10ml-430x430.jpg"></ion-img>
+            <ion-card-header>
+              <ion-card-title>Demon X Mirus Xyber 12500 Disposable Vape Kit</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <p>₱600</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Submit Order Button -->
+  <ion-button expand="block" color="primary">Submit Order</ion-button>
+</ion-content>

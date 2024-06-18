@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonItem, IonButton, IonLabel, IonList, IonBackButton, IonButtons } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonItem, IonButton, IonLabel, IonList, IonBackButton, IonButtons, IonInput, IonCardContent, IonCardTitle, IonCardHeader, IonCard } from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 
@@ -10,7 +10,7 @@ import { ToastController } from '@ionic/angular';
   templateUrl: './profile.page.html',
   styleUrls: ['./profile.page.scss'],
   standalone: true,
-  imports: [IonButtons, IonBackButton, IonList, IonLabel, IonButton, IonItem, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonInput, IonButtons, IonBackButton, IonList, IonLabel, IonButton, IonItem, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
 export class ProfilePage implements OnInit {
   user = {

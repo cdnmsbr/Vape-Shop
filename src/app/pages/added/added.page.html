@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Added to Cart</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="ion-text-center">
+    <ion-icon name="checkmark-circle" size="large" color="success"></ion-icon>
+    <h2>Item Added to Cart</h2>
+    <p>Your item has been successfully added to the cart.</p>
+    <ion-button expand="block" color="dark" (click)="view()">View Cart</ion-button>
+    <ion-button expand="block" color="primary" (click)="home()">Continue Shopping</ion-button>
+  </div>
+</ion-content>
